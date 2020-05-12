@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val adapter=ArrayAdapter(this,R.layout.item,array)
+        /* val adapter=ArrayAdapter(this,R.layout.item,array)
         val listView=findViewById<ListView>(R.id.listview)
         listView.adapter=adapter
         listView.onItemClickListener= object : AdapterView.OnItemClickListener{
@@ -31,7 +31,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,t,Toast.LENGTH_SHORT).show()
             }
 
-        }
+        }*/
+            button.setOnClickListener {
+                val intent= Intent(this,SecondActivity::class.java)
+                intent.putExtra("dato",edittext.text.toString())
+                startActivity(intent)
+            }
         }
     }
 
